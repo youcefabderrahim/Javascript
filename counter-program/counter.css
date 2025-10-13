@@ -10,6 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: aliceblue;
 }
 
 button {
@@ -17,6 +18,7 @@ button {
     width: 150px;
     border: none;
     border-radius: 2rem;
+    background-color: rgb(168, 6, 6);
 }
 
 button:hover {
@@ -32,4 +34,5 @@ button:active {
 h2 {
     text-align: center;
     margin: 30px;
+    color: #000;
 }
