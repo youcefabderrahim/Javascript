@@ -1,52 +1,31 @@
-let isCelc = true;
-let input;
+// ! 1- we have to declare all DOM functions as consts first
+const tempValue = document.getElementById(`tempValue`);
+const toC = document.getElementById(`toC`);
+const toF = document.getElementById(`toF`);
+const result = document.getElementById(`result`);
+const btn = document.getElementById(`convert`);
+let temp;
 
+btn.onclick = function convert () {
+        if (toF.checked) {
+        // Convert from Celsius to Fahrenheit
+        temp = Number(tempValue.value);
+        temp = temp * 9/5 + 32;
+        result.textContent = temp.toFixed(1) + "°F";
+        } else if (toC.checked) {
+        // Convert from Fahrenheit to Celsius
+        temp = Number(tempValue.value);
+        temp = (temp - 32) * (5/9);
+        result.textContent = temp.toFixed(1) + "°C";
+        } else {
+        result.textContent = "Please, choose a unit!";
 
-
-// ! This is how we get the radios values
-let radios = document.querySelectorAll('input[name="temp"]');
-
-// ! Key values learned
-// Everything happens when we click the button
-//  Nothing happens untill the user does somethins
-//  !This function does (get input → get choice → calculate → show result)
-// ! when clicked, that's still one thing that it does
-
-// function getValue () {
-//     // Loop through all of them
-//     for (let i = 0; i < radios.length; i++) {
-//     radios[i].addEventListener('change', function() {
-//         // 'this' refers to the radio button that was changed
-//         console.log("You selected: " + this.value);
-//         console.log(typeof this.value)
-//     });
-//     }
-
-// }
-
-
-
-
-
-document.getElementById(`convert`).onclick = function convert () {
-
-    // ! Get the value of the selected radio 
-    let selectedRadio =  document.querySelector('input[name="temp"]:checked');
-    let choice = selectedRadio.value;
-    console.log(choice);
-    input = document.getElementById(`tempValue`).value;
-    console.log(input);
-    console.log(`The button works`);
-    if (choice === "F") {
-        document.getElementById(`result`).textContent = (Number(input) * (9/5)) + 32;
-        console.log((Number(input) * (9/5)) + 32);
-
-
-    } else if (choice === "C") {
-        document.getElementById(`result`).textContent = (Number(input) - 32) * (5/9);
-        console.log((Number(input) - 32) * (5/9));
     }
-
-
 }
 
+
+// ! Key lessons
+// 1- Declaring DOM references as const at the top — good for readability and performance.
+// 2- Using Number() to ensure numeric conversion (avoids string issues).
+// 3- Using toFixed(1) for clean rounding — perfect for user display.
+// 4- Writing a clear fallback message (Please, choose a unit!).
