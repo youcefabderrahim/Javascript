@@ -1,6 +1,6 @@
 // This is random password generator
 
-function generatPassword(params) {
+function generatPassword(passwordLength, includeLowerCase, includeCapitalCase, includeNumbers, includeSymbols) {
   // ! Declaring some consts
   const lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
   const uperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -28,7 +28,7 @@ function generatPassword(params) {
   }
 
   // ! for many iterations as our password is, we will select a random char
-  for (let i = 0; i < passwordLength.length; i++) {
+  for (let i = 0; i < passwordLength; i++) {
     const random = Math.floor(Math.random() * allowedChars.length);
     password += allowedChars[random];
     
