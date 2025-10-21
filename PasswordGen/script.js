@@ -16,18 +16,28 @@ function generatPassword(params) {
   allowedChars += includeCapitalCase ? uperCaseChars : "";
   allowedChars += includeNumbers ? numberChars : "";
   allowedChars += includeSymbols ? symbolsChars : "";
+  // ! This is the real functionality
+  // ! what if password is negative or less than ...
+  if (passwordLength <= 8) {
+    return "Password length must be at least 8!";
+  }
 
-  console.log(allowedChars);
+
+
+  return "";
 }
-const passwordLength = 12;
+const passwordLength = 8;
 const includeLowerCase = true;
 const includeCapitalCase = false;
 const includeNumbers = false;
 const includeSymbols = false;
 
-const password = generatPassword(passwordLength,
-                                includeLowerCase,
-                                includeCapitalCase,
-                                includeNumbers,
-                                includeSymbols
+const password = generatPassword(
+  passwordLength,
+  includeLowerCase,
+  includeCapitalCase,
+  includeNumbers,
+  includeSymbols
 );
+
+console.log(password);
