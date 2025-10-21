@@ -27,14 +27,21 @@ function generatPassword(params) {
     return `At least one set of characters must be selected`;
   }
 
+  // ! for many iterations as our password is, we will select a random char
+  for (let i = 0; i < passwordLength.length; i++) {
+    const random = Math.floor(Math.random() * allowedChars.length);
+    password += allowedChars[random];
+    
+  } 
 
 
-  return "";
+
+  return password;
 }
 const passwordLength = 8;
-const includeLowerCase = false;
-const includeCapitalCase = false;
-const includeNumbers = false;
+const includeLowerCase = true;
+const includeCapitalCase = true;
+const includeNumbers = true;
 const includeSymbols = false;
 
 const password = generatPassword(
