@@ -18,8 +18,13 @@ function generatPassword(params) {
   allowedChars += includeSymbols ? symbolsChars : "";
   // ! This is the real functionality
   // ! what if password is negative or less than ...
-  if (passwordLength <= 8) {
+  if (passwordLength < 8) {
     return "Password length must be at least 8!";
+  }
+
+  // ! What if no option has been selected
+  if (allowedChars.length === 0) {
+    return `At least one set of characters must be selected`;
   }
 
 
@@ -27,7 +32,7 @@ function generatPassword(params) {
   return "";
 }
 const passwordLength = 8;
-const includeLowerCase = true;
+const includeLowerCase = false;
 const includeCapitalCase = false;
 const includeNumbers = false;
 const includeSymbols = false;
