@@ -2,25 +2,11 @@
 // ? of an array than returns a new array (very similar to foreach)
 // ! it returns a new array without keeping the original one
 
-const students = ['Jake', 'Alice', 'Amanda'];
-const upperCased = students.map(upperCase);
-console.log(upperCased);
+const date = ["2025/10/22", "2026/03/04"];
+const formattedDates = date.map(formatDates);
+console.log(formattedDates);
 
-const lowerCased = students.map(lowerCase);
-console.log(lowerCased);
-
-const capitalized = students.map(capitalize);
-console.log(capitalized);
-
-
-function upperCase (element) {
-    return element.toUpperCase();
-}
-
-function lowerCase (element) {
-    return element.toLowerCase();
-}
-
-function capitalize (element) {
-    return element.charAt(0) + element.slice(1);
+function formatDates (element) {
+    const parts = element.split("/");
+    return `${parts[1]}/${parts[2]}/${parts[0]}`;
 }
