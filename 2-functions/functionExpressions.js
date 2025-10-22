@@ -11,4 +11,13 @@ hello();
 
 
 // 2- pass a function as a value
-setTimeout(hello, 3000);
+// setTimeout(hello, 3000);
+
+// 3- create the function inside instead of a callback
+
+
+setTimeout(
+    function () {
+        console.log(`Hello!`);
+    }
+,3000);
