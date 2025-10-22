@@ -1,19 +1,26 @@
 // ! .map() => accepts a callback and applies that function to each element
 // ? of an array than returns a new array (very similar to foreach)
+// ! it returns a new array without keeping the original one
 
-const numbers = [1, 2, 3, 4, 5];
+const students = ['Jake', 'Alice', 'Amanda'];
+const upperCased = students.map(upperCase);
+console.log(upperCased);
 
-const squares = numbers.map(square);
-console.log(squares);
+const lowerCased = students.map(lowerCase);
+console.log(lowerCased);
 
-const cubes = numbers.map(cube);
-console.log(cubes);
+const capitalized = students.map(capitalize);
+console.log(capitalized);
 
 
-function square (element) {
-    return Math.pow(element, 2);
+function upperCase (element) {
+    return element.toUpperCase();
 }
 
-function cube (element) {
-    return Math.pow(element, 3);
+function lowerCase (element) {
+    return element.toLowerCase();
+}
+
+function capitalize (element) {
+    return element.charAt(0) + element.slice(1);
 }
