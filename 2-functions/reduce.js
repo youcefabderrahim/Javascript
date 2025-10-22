@@ -1,10 +1,17 @@
 // ! .reduce() => reduces the elements of an array to a single value
 
-const prices = [39, 1, 3, 10, 25];
-const total = prices.reduce(sum);
-console.log(`$${total.toFixed(2)}`);
+let grades = [76, 77, 90, 82, 95];
+const maxGrade = grades.reduce(getMax);
+console.log(maxGrade);
+
+const minGrade = grades.reduce(getMin);
+console.log(minGrade);
 
 
-function sum (accumulator, element) {
-    return accumulator + element;
+function getMax (accumulator, element) {
+    return Math.max(accumulator, element);
+}
+
+function getMin (accumulator, element) {
+    return Math.min(accumulator, element);
 }
