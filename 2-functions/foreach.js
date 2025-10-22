@@ -4,12 +4,22 @@
 
 let numbers = [1, 2, 3, 4, 5];
 
+
+numbers.forEach(double);
 numbers.forEach(display);  // we pass our funtion as a callback
+
+
+numbers.forEach(square);
+numbers.forEach(display);
 
 function display(element) {
     console.log(element);
 }
 
-function double(element) {
-    console.log(element * 2);
+function double(element, index, array) {
+    array[index] = element * 2;
+}
+
+function square(element, index, array) {
+    array[index] = Math.pow(element, 2);
 }
