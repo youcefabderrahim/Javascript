@@ -2,24 +2,18 @@
 // function (claback) to rach element
 // array.foreach(callback)
 
-let numbers = [1, 2, 3, 4, 5];
+let fruits = ['banana', 'apple', 'kiwi', 'fig'];
+fruits.forEach(capitalize);
+fruits.forEach(display);
 
+function upperCase(element, index, array) {
+    array[index] = element.toUpperCase();
+}
 
-numbers.forEach(double);
-numbers.forEach(display);  // we pass our funtion as a callback
+function capitalize(element, index, array) {
+    array[index] = element.charAt(0).toUpperCase() + element.slice(1);
+}
 
-
-numbers.forEach(square);
-numbers.forEach(display);
-
-function display(element) {
+function display (element) {
     console.log(element);
-}
-
-function double(element, index, array) {
-    array[index] = element * 2;
-}
-
-function square(element, index, array) {
-    array[index] = Math.pow(element, 2);
 }
