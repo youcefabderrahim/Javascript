@@ -9,3 +9,7 @@ body.append(`Hello`);
 // ! II- Create an element and then you have to add it
 const div = document.createElement('div');
 body.append(div);
+
+// ! there are two way to add a text to a div
+div.innerText = "This is a DOM manipulation"
+div.textContent = "This is a DOM manipulation 2"
